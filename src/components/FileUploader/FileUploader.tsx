@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useState } from "react";
 import styles from "./fileUploader.module.css";
 
 type FileUploaderProps = {
-  onChange: (file: File) => void;
+  onChange: React.Dispatch<React.SetStateAction<File | null>>;
   label: string;
   thumbnail: null | string;
 };
@@ -26,7 +26,7 @@ export default function FileUploader({
   return (
     <div>
       <div>
-        <label className="primary p-lg rounded">
+        <label className="primary py-md px-lg rounded inline-block">
           <p className="white--text text-md">{label}</p>
           <input type="file" className="hidden" onChange={changeHandler} />
         </label>

@@ -1,5 +1,6 @@
 import usePagination from "../../hooks/usePagination";
 type PageItemProps = {
+  active?: boolean;
   disabled: boolean;
   children: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -12,13 +13,30 @@ type PaginationProps = {
   setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 const PageItem = ({
-  disabled,
+  active = false,
+  disabled = false,
   children,
   onClick = () => {},
 }: PageItemProps) => {
+  const bgColor = active ? "primary" : "transparent";
+  const color = active
+    ? "white--text"
+    : disabled
+    ? "slate-light2--text"
+    : "slate-light1--text";
   return (
-    <li>
-      <button disabled={disabled} onClick={onClick}>
+    <li
+      style={{ width: "32px", height: "32px" }}
+      className="overflow-hidden rounded-sm mx-xs"
+    >
+      <button
+        disabled={disabled}
+        onClick={onClick}
+        className={`
+        w-full h-full text-sm  
+        ${bgColor} ${color} ${disabled ? "cursor-auto" : ""}
+        `}
+      >
         {children}
       </button>
     </li>
@@ -39,7 +57,7 @@ export default function Pagination({
   });
   return (
     <div className="flex justify-center items-center wrap">
-      <ul>
+      <ul className="flex items-center wrap">
         <PageItem
           disabled={page === 1}
           onClick={() => setPage((old) => old - 1)}
@@ -56,6 +74,7 @@ export default function Pagination({
             {p !== "..." && (
               <PageItem
                 key={p}
+                active={page === p}
                 disabled={false}
                 onClick={() => setPage(p as number)}
               >

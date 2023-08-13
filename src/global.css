@@ -5,19 +5,45 @@
   margin: 0px;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: iranSans;
+  src: url("./assets/iran-sans.ttf");
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: iranSans;
+  font-size: 16px;
+  direction: rtl;
+}
+input {
+  font-family: iranSans;
+}
+input::placeholder {
+  font-size: 1rem;
+  color: rgb(150, 150, 150);
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-@font-face {
-  font-family: iranSans;
-  src: url("./assets/iran-sans.ttf");
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-body {
-  font-family: iranSans;
-  font-size: 16px;
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .w-full {
@@ -33,6 +59,38 @@ body {
   height: 100vh;
 }
 
+.left-0 {
+  left: 0%;
+}
+.left-100 {
+  left: 100%;
+}
+.right-0 {
+  right: 0%;
+}
+.right-100 {
+  right: 100%;
+}
+.top-0 {
+  top: 0%;
+}
+.top-100 {
+  top: 100%;
+}
+.bottom-0 {
+  bottom: 0%;
+}
+.bottom-100 {
+  bottom: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-auto {
+  cursor: auto;
+}
+
 .primary {
   background-color: #0284c7;
 }
@@ -42,17 +100,26 @@ body {
 .error {
   background-color: #dc2626;
 }
-.slate-light {
+.slate-light2 {
+  background-color: #e2e8f0;
+}
+.slate-light1 {
   background-color: #94a3b8;
 }
 .slate {
+  background-color: #64748b;
+}
+.slate-dark1 {
   background-color: #475569;
 }
-.slate-dark {
+.slate-dark2 {
   background-color: #1e293b;
 }
 .white {
   background-color: white;
+}
+.transparent--text {
+  background-color: transparent;
 }
 .primary--text {
   color: #0284c7;
@@ -63,17 +130,28 @@ body {
 .error--text {
   color: #dc2626;
 }
-.slate-light--text {
+
+.slate-light2--text {
+  color: #e2e8f0;
+}
+.slate-light1--text {
   color: #94a3b8;
 }
 .slate--text {
+  color: #64748b;
+}
+.slate-dark1--text {
   color: #475569;
 }
-.slate-dark--text {
+.slate-dark2--text {
   color: #1e293b;
 }
+
 .white--text {
   color: white;
+}
+.transparent--text {
+  color: transparent;
 }
 
 .text-xs {
@@ -98,9 +176,24 @@ body {
 .text-bold {
   font-weight: 700;
 }
+.text-center {
+  text-align: center;
+}
 
+.rounded-sm {
+  border-radius: 0.25rem;
+}
 .rounded {
   border-radius: 0.5rem;
+}
+.rounded-lg {
+  border-radius: 1rem;
+}
+.border-none {
+  border: none;
+}
+.outline-none {
+  outline: none;
 }
 
 .p-xs {
@@ -118,35 +211,62 @@ body {
 .p-xl {
   padding: 1.8rem;
 }
+
+.pt-xs {
+  padding-top: 0.4rem;
+}
+.pt-sm {
+  padding-top: 0.6rem;
+}
+.pt-md {
+  padding-top: 0.8rem;
+}
+.pt-lg {
+  padding-top: 1.2rem;
+}
+.pt-xl {
+  padding-top: 1.8rem;
+}
 .px-xs {
-  padding: 0px 0.4rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
 }
 .px-sm {
-  padding: 0px 0.6rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
 }
 .px-md {
-  padding: 0px 0.8rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 .px-lg {
-  padding: 0px 1.2rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
 }
 .px-xl {
-  padding: 0px 1.8rem;
+  padding-right: 1.8rem;
+  padding-left: 1.8rem;
 }
 .py-xs {
-  padding: 0.4rem 0px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 .py-sm {
   padding: 0.6rem 0px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 .py-md {
-  padding: 0.8rem 0px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 .py-lg {
-  padding: 1.2rem 0px;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 .py-xl {
-  padding: 1.8rem 0px;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
 }
 .m-xs {
   margin: 0.4rem;
@@ -179,41 +299,57 @@ body {
   margin-top: 1.8rem;
 }
 .mx-xs {
-  margin: 0px 0.4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
 }
 .mx-sm {
-  margin: 0px 0.6rem;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
 }
 .mx-md {
-  margin: 0px 0.8rem;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
 .mx-lg {
-  margin: 0px 1.2rem;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
 }
 .mx-xl {
-  margin: 0px 1.8rem;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
 }
 .my-xs {
-  margin: 0.4rem 0px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 .my-sm {
-  margin: 0.6rem 0px;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 .my-md {
-  margin: 0.8rem 0px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 .my-lg {
-  margin: 1.2rem 0px;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 .my-xl {
-  margin: 1.8rem 0px;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline-flex {
+  display: inline-flex;
 }
 .flex {
   display: flex;
@@ -262,4 +398,8 @@ body {
 }
 .overflow-auto {
   overflow: auto;
+}
+
+.transition-linear {
+  transition: all 0.1s linear;
 }

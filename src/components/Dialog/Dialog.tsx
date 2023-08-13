@@ -22,12 +22,12 @@ export default function Dialog({
     <>
       <div
         onClick={closeHandler}
-        className={`w-full h-screen fixed z-2 ${styles.overlay}`}
+        className={`w-full h-screen fixed z-2 right-0 top-0 ${styles.overlay}`}
       ></div>
       <div className={`fixed z-3 rounded p-lg white z-3 ${styles.dialog}`}>
         <div className="flex justify-between items-center">
           <p className="slate-dark--text text-bold text-lg">{title}</p>
-          <button onClick={closeHandler} className="font-xl slate-light--text">
+          <button onClick={closeHandler} className="font-xl slate-light1--text">
             X
           </button>
         </div>
