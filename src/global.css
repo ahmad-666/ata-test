@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url("./assets/iran-sans.ttf");
+}
+body {
+  font-family: iranSans;
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+
+.primary {
+  background-color: #0284c7;
+}
+.secondary {
+  background-color: #4f46e5;
+}
+.error {
+  background-color: #dc2626;
+}
+.slate-light {
+  background-color: #94a3b8;
+}
+.slate {
+  background-color: #475569;
+}
+.slate-dark {
+  background-color: #1e293b;
+}
+.white {
+  background-color: white;
+}
+.primary--text {
+  color: #0284c7;
+}
+.secondary--text {
+  color: #4f46e5;
+}
+.error--text {
+  color: #dc2626;
+}
+.slate-light--text {
+  color: #94a3b8;
+}
+.slate--text {
+  color: #475569;
+}
+.slate-dark--text {
+  color: #1e293b;
+}
+.white--text {
+  color: white;
+}
+
+.text-xs {
+  font-size: 0.8rem;
+}
+.text-sm {
+  font-size: 1rem;
+}
+.text-md {
+  font-size: 1.2rem;
+}
+.text-lg {
+  font-size: 1.5rem;
+}
+.text-xl {
+  font-size: 2rem;
+}
+
+.text-light {
+  font-weight: 300;
+}
+.text-bold {
+  font-weight: 700;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.p-xs {
+  padding: 0.4rem;
+}
+.p-sm {
+  padding: 0.6rem;
+}
+.p-md {
+  padding: 0.8rem;
+}
+.p-lg {
+  padding: 1.2rem;
+}
+.p-xl {
+  padding: 1.8rem;
+}
+.px-xs {
+  padding: 0px 0.4rem;
+}
+.px-sm {
+  padding: 0px 0.6rem;
+}
+.px-md {
+  padding: 0px 0.8rem;
+}
+.px-lg {
+  padding: 0px 1.2rem;
+}
+.px-xl {
+  padding: 0px 1.8rem;
+}
+.py-xs {
+  padding: 0.4rem 0px;
+}
+.py-sm {
+  padding: 0.6rem 0px;
+}
+.py-md {
+  padding: 0.8rem 0px;
+}
+.py-lg {
+  padding: 1.2rem 0px;
+}
+.py-xl {
+  padding: 1.8rem 0px;
+}
+.m-xs {
+  padding: 0.4rem;
+}
+.m-sm {
+  padding: 0.6rem;
+}
+.m-md {
+  padding: 0.8rem;
+}
+.m-lg {
+  padding: 1.2rem;
+}
+.m-xl {
+  padding: 1.8rem;
+}
+.mx-xs {
+  padding: 0px 0.4rem;
+}
+.mx-sm {
+  padding: 0px 0.6rem;
+}
+.mx-md {
+  padding: 0px 0.8rem;
+}
+.mx-lg {
+  padding: 0px 1.2rem;
+}
+.mx-xl {
+  padding: 0px 1.8rem;
+}
+.my-xs {
+  padding: 0.4rem 0px;
+}
+.my-sm {
+  padding: 0.6rem 0px;
+}
+.my-md {
+  padding: 0.8rem 0px;
+}
+.my-lg {
+  padding: 1.2rem 0px;
+}
+.my-xl {
+  padding: 1.8rem 0px;
+}
+
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+
+.z-1 {
+  z-index: 1;
+}
+.z-2 {
+  z-index: 2;
+}
+.z-3 {
+  z-index: 3;
+}
