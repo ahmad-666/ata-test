@@ -1,0 +1,157 @@
+.gap-xs {
+  gap: 0.4rem;
+}
+.gap-sm {
+  gap: 0.6rem;
+}
+.gap-md {
+  gap: 0.8rem;
+}
+.gap-lg {
+  gap: 1.2rem;
+}
+.gap-xl {
+  gap: 1.8rem;
+}
+
+.p-xs {
+  padding: 0.4rem;
+}
+.p-sm {
+  padding: 0.6rem;
+}
+.p-md {
+  padding: 0.8rem;
+}
+.p-lg {
+  padding: 1.2rem;
+}
+.p-xl {
+  padding: 1.8rem;
+}
+
+.pt-xs {
+  padding-top: 0.4rem;
+}
+.pt-sm {
+  padding-top: 0.6rem;
+}
+.pt-md {
+  padding-top: 0.8rem;
+}
+.pt-lg {
+  padding-top: 1.2rem;
+}
+.pt-xl {
+  padding-top: 1.8rem;
+}
+.px-xs {
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+}
+.px-sm {
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+}
+.px-md {
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+}
+.px-lg {
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+.px-xl {
+  padding-right: 1.8rem;
+  padding-left: 1.8rem;
+}
+.py-xs {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.py-sm {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.py-md {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.py-lg {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+.py-xl {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+.m-xs {
+  margin: 0.4rem;
+}
+.m-sm {
+  margin: 0.6rem;
+}
+.m-md {
+  margin: 0.8rem;
+}
+.m-lg {
+  margin: 1.2rem;
+}
+.m-xl {
+  margin: 1.8rem;
+}
+.mt-xs {
+  margin-top: 0.4rem;
+}
+.mt-sm {
+  margin-top: 0.6rem;
+}
+.mt-md {
+  margin-top: 0.8rem;
+}
+.mt-lg {
+  margin-top: 1.2rem;
+}
+.mt-xl {
+  margin-top: 1.8rem;
+}
+.mx-xs {
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.mx-sm {
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+}
+.mx-md {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+.mx-lg {
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+.mx-xl {
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
+}
+.my-xs {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.my-sm {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.my-md {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.my-lg {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.my-xl {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}

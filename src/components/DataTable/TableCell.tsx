@@ -6,7 +6,7 @@ type TableCellProps = {
 };
 export default function TableCell({ column, row }: TableCellProps) {
   return (
-    <td>
+    <td className="text-start p-md slate-dark1--text text-sm">
       {!column.render
         ? (row[column.value] as string)
         : column.render(

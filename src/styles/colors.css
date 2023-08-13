@@ -1,0 +1,60 @@
+.primary {
+  background-color: #0284c7;
+}
+.secondary {
+  background-color: #4f46e5;
+}
+.error {
+  background-color: #dc2626;
+}
+.slate-light2 {
+  background-color: #e2e8f0;
+}
+.slate-light1 {
+  background-color: #94a3b8;
+}
+.slate {
+  background-color: #64748b;
+}
+.slate-dark1 {
+  background-color: #475569;
+}
+.slate-dark2 {
+  background-color: #1e293b;
+}
+.white {
+  background-color: white;
+}
+.transparent--text {
+  background-color: transparent;
+}
+.primary--text {
+  color: #0284c7;
+}
+.secondary--text {
+  color: #4f46e5;
+}
+.error--text {
+  color: #dc2626;
+}
+.slate-light2--text {
+  color: #e2e8f0;
+}
+.slate-light1--text {
+  color: #94a3b8;
+}
+.slate--text {
+  color: #64748b;
+}
+.slate-dark1--text {
+  color: #475569;
+}
+.slate-dark2--text {
+  color: #1e293b;
+}
+.white--text {
+  color: white;
+}
+.transparent--text {
+  color: transparent;
+}

@@ -1,0 +1,180 @@
+@import "./colors.css";
+@import "./spacing.css";
+@import "./text.css";
+@import "./radius.css";
+@import "./grid.css";
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: iranSans;
+  src: url("./assets/iran-sans.ttf");
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: iranSans;
+  font-size: 16px;
+  direction: rtl;
+}
+input {
+  font-family: iranSans;
+}
+input::placeholder {
+  font-size: 1rem;
+  color: rgb(150, 150, 150);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-section {
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1100px) {
+  .main-section {
+    width: 90vw;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+
+.left-0 {
+  left: 0%;
+}
+.left-100 {
+  left: 100%;
+}
+.right-0 {
+  right: 0%;
+}
+.right-100 {
+  right: 100%;
+}
+.top-0 {
+  top: 0%;
+}
+.top-100 {
+  top: 100%;
+}
+.bottom-0 {
+  bottom: 0%;
+}
+.bottom-100 {
+  bottom: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-auto {
+  cursor: auto;
+}
+
+.border-none {
+  border: none;
+}
+.outline-none {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+
+.z-1 {
+  z-index: 1;
+}
+.z-2 {
+  z-index: 2;
+}
+.z-3 {
+  z-index: 3;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-auto {
+  overflow: auto;
+}
+
+.transition-linear {
+  transition: all 0.1s linear;
+}
