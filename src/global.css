@@ -225,6 +225,9 @@ body {
 .fixed {
   position: fixed;
 }
+.wrap {
+  flex-wrap: wrap;
+}
 
 .z-1 {
   z-index: 1;

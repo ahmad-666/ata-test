@@ -1,30 +1,33 @@
 import { createPortal } from "react-dom";
 import styles from "./dialog.module.css";
-
+import { useCallback } from "react";
 type DialogProps = {
-  open: boolean;
-  onClose: () => void;
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
   title: string;
   children: React.ReactNode;
 };
 
 export default function Dialog({
-  open,
-  onClose,
+  show,
+  setShow,
   title,
   children,
 }: DialogProps) {
-  if (!open) return null;
+  const closeHandler = useCallback(() => {
+    setShow(false);
+  }, [setShow]);
+  if (!show) return null;
   return createPortal(
     <>
       <div
-        onClick={onClose}
+        onClick={closeHandler}
         className={`w-full h-screen fixed z-2 ${styles.overlay}`}
       ></div>
       <div className={`fixed z-3 rounded p-lg white z-3 ${styles.dialog}`}>
         <div className="flex justify-between items-center">
           <p className="slate-dark--text text-bold text-lg">{title}</p>
-          <button onClick={onClose} className="font-xl slate-light--text">
+          <button onClick={closeHandler} className="font-xl slate-light--text">
             X
           </button>
         </div>
