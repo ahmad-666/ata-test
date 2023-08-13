@@ -149,51 +149,69 @@ body {
   padding: 1.8rem 0px;
 }
 .m-xs {
-  padding: 0.4rem;
+  margin: 0.4rem;
 }
 .m-sm {
-  padding: 0.6rem;
+  margin: 0.6rem;
 }
 .m-md {
-  padding: 0.8rem;
+  margin: 0.8rem;
 }
 .m-lg {
-  padding: 1.2rem;
+  margin: 1.2rem;
 }
 .m-xl {
-  padding: 1.8rem;
+  margin: 1.8rem;
+}
+.mt-xs {
+  margin-top: 0.4rem;
+}
+.mt-sm {
+  margin-top: 0.6rem;
+}
+.mt-md {
+  margin-top: 0.8rem;
+}
+.mt-lg {
+  margin-top: 1.2rem;
+}
+.mt-xl {
+  margin-top: 1.8rem;
 }
 .mx-xs {
-  padding: 0px 0.4rem;
+  margin: 0px 0.4rem;
 }
 .mx-sm {
-  padding: 0px 0.6rem;
+  margin: 0px 0.6rem;
 }
 .mx-md {
-  padding: 0px 0.8rem;
+  margin: 0px 0.8rem;
 }
 .mx-lg {
-  padding: 0px 1.2rem;
+  margin: 0px 1.2rem;
 }
 .mx-xl {
-  padding: 0px 1.8rem;
+  margin: 0px 1.8rem;
 }
 .my-xs {
-  padding: 0.4rem 0px;
+  margin: 0.4rem 0px;
 }
 .my-sm {
-  padding: 0.6rem 0px;
+  margin: 0.6rem 0px;
 }
 .my-md {
-  padding: 0.8rem 0px;
+  margin: 0.8rem 0px;
 }
 .my-lg {
-  padding: 1.2rem 0px;
+  margin: 1.2rem 0px;
 }
 .my-xl {
-  padding: 1.8rem 0px;
+  margin: 1.8rem 0px;
 }
 
+.hidden{
+    display: none;
+}
 .block {
   display: block;
 }
@@ -237,4 +255,11 @@ body {
 }
 .z-3 {
   z-index: 3;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-auto {
+  overflow: auto;
 }
