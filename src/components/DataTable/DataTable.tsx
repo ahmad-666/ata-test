@@ -34,6 +34,7 @@ export default function DataTable({
         <TableBody columns={columns} rows={paginateRows} />
       </table>
       <Pagination
+        className="mt-lg"
         page={page}
         pageSize={pageSize}
         total={rows.length}

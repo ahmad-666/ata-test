@@ -326,13 +326,14 @@ export default function UserTable() {
         className="mt-xl"
         page={page}
         setPage={setPage}
-        pageSize={3}
+        pageSize={5}
       />
       {activeUser && (
         <Dialog
           show={detailsDialog}
           setShow={setDetailsDialog}
           title="جزییات کارمند"
+          width={600}
         >
           <UserDetails
             id={activeUser.id}
@@ -352,7 +353,12 @@ export default function UserTable() {
       <Dialog show={editDialog} setShow={setEditDialog} title="ویرایش کارمند">
         <UserForm mode="edit" editUser={activeUser!} onEdit={editUser} />
       </Dialog>
-      <Dialog show={deleteDialog} setShow={setDeleteDialog} title="حذف کارمند">
+      <Dialog
+        show={deleteDialog}
+        setShow={setDeleteDialog}
+        title="حذف کارمند"
+        width={500}
+      >
         <div>
           <p className="text-sm slate-dark2--text">
             آیا مطمئن هستید که میخواهید مورد انتخابی را حذف کنید ؟

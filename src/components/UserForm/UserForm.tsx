@@ -131,7 +131,7 @@ export default function UserForm({
     <div>
       <form noValidate onSubmit={submitHandler}>
         <div className="flex wrap">
-          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+          <div className="grid-col cols-12 cols-md-6 cols-lg-4">
             <InputField
               name="fname"
               label="نام"
@@ -141,7 +141,7 @@ export default function UserForm({
               error={touched.fname && errors.fname}
             />
           </div>
-          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+          <div className="grid-col cols-12 cols-md-6 cols-lg-4">
             <InputField
               name="lname"
               label="نام خانوادگی"
@@ -151,7 +151,7 @@ export default function UserForm({
               error={touched.lname && errors.lname}
             />
           </div>
-          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+          <div className="grid-col cols-12 cols-md-6 cols-lg-4">
             <InputField
               name="ssn"
               label="شماره ملی"
@@ -162,7 +162,7 @@ export default function UserForm({
               className="input-direction-ltr"
             />
           </div>
-          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+          <div className="grid-col cols-12 cols-md-6 cols-lg-4">
             <InputField
               name="email"
               label="ایمیل"
@@ -173,7 +173,7 @@ export default function UserForm({
               error={touched.email && errors.email}
             />
           </div>
-          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+          <div className="grid-col cols-12 cols-md-6 cols-lg-4">
             <InputField
               name="mobile"
               label="موبایل"

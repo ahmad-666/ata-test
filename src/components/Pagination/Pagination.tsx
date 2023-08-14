@@ -11,6 +11,7 @@ type PaginationProps = {
   total: number;
   sibling?: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  className?: string;
 };
 const PageItem = ({
   active = false,
@@ -48,6 +49,7 @@ export default function Pagination({
   total,
   sibling = 1,
   setPage,
+  className = "",
 }: PaginationProps) {
   const { pages, totalPages } = usePagination({
     currentPage: page,
@@ -56,7 +58,7 @@ export default function Pagination({
     siblingCount: sibling,
   });
   return (
-    <div className="flex justify-center items-center wrap">
+    <div className={`flex justify-center items-center wrap ${className}`}>
       <ul className="flex items-center wrap">
         <PageItem
           disabled={page === 1}
