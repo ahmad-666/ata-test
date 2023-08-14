@@ -1,19 +1,29 @@
 import DataTable from "../DataTable/DataTable";
 import type { User } from "../../types/user";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import UserForm from "../UserForm/UserForm";
 import UserDetails from "../UserDetails/UserDetails";
 import Dialog from "../Dialog/Dialog";
 import Snackbar from "../Snackbar/Snackbar";
 import InputField from "../InputField/InputField";
 import Pagination from "../Pagination/Pagination";
-
+import useForm from "../../hooks/useForm";
 export default function UserTable() {
   const [addDialog, setAddDialog] = useState(false);
   const [editDialog, setEditDialog] = useState(false);
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [detailsDialog, setDetailsDialog] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
+  const { values, onSubmit, onChange } = useForm({
+    initVals: {
+      fname: "",
+      lname: "",
+      ssn: "",
+      email: "",
+      mobile: "",
+      address: "",
+    },
+  });
   const [users, setUsers] = useState<User[]>([
     {
       id: 1,
@@ -36,6 +46,7 @@ export default function UserTable() {
       imgSrc: "/avatar.png",
     },
   ]);
+  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [activeUser, setActiveUser] = useState<null | User>(null);
   const columns = useMemo(() => {
     return [
@@ -120,6 +131,9 @@ export default function UserTable() {
       },
     ];
   }, []);
+  useEffect(() => {
+    setFilteredUsers(users);
+  }, [users]);
   const deleteUser = useCallback(() => {
     setUsers((old) => old.filter((u) => u.id !== activeUser?.id));
     setActiveUser(null);
@@ -138,15 +152,94 @@ export default function UserTable() {
     });
     setEditDialog(false);
   }, []);
+  const submitHandler = useCallback(
+    (e: React.FormEvent) => {
+      onSubmit(e);
+      const filteredUsers = users.filter((user) => {
+        return (
+          user.fname.includes(values.fname) &&
+          user.lname.includes(values.lname) &&
+          user.mobile.includes(values.mobile) &&
+          user.email.includes(values.email) &&
+          user.ssn.includes(values.ssn) &&
+          user.address.includes(values.address)
+        );
+      });
+      setFilteredUsers(filteredUsers);
+    },
+    [onSubmit, users, values]
+  );
   return (
     <div>
+      <form noValidate onSubmit={submitHandler} className="mt-xl">
+        <h1 className="slate-dark2--text text-bold text-lg">جست و جو</h1>
+        <div className="flex wrap mt-lg">
+          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+            <InputField
+              name="fname"
+              label="نام"
+              value={values.fname}
+              setValue={onChange}
+            />
+          </div>
+          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+            <InputField
+              name="lname"
+              label="نام خانوادگی"
+              value={values.lname}
+              setValue={onChange}
+            />
+          </div>
+          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+            <InputField
+              name="ssn"
+              label="شماره ملی"
+              value={values.ssn}
+              setValue={onChange}
+              className="input-direction-ltr"
+            />
+          </div>
+          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+            <InputField
+              name="email"
+              label="ایمیل"
+              type="email"
+              value={values.email}
+              setValue={onChange}
+            />
+          </div>
+          <div className="grid-col cols-12 cols-sm-6 cols-lg-4">
+            <InputField
+              name="mobile"
+              label="موبایل"
+              type="tel"
+              value={values.mobile}
+              setValue={onChange}
+            />
+          </div>
+          <div className="grid-col cols-12">
+            <InputField
+              name="address"
+              label="آدرس"
+              value={values.address}
+              setValue={onChange}
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="rounded mt-lg mx-auto block primary py-md px-lg white--text text-md"
+        >
+          جست و جو
+        </button>
+      </form>
       <button
-        className="rounded primary white--text text-sm py-md px-lg"
+        className="rounded secondary white--text text-sm py-md px-lg mt-xl"
         onClick={() => setAddDialog(true)}
       >
         افزودن کارمند جدید
       </button>
-      <DataTable columns={columns} rows={users} className="mt-xl" />
+      <DataTable columns={columns} rows={filteredUsers} className="mt-xl" />
       {activeUser && (
         <Dialog
           show={detailsDialog}
@@ -165,7 +258,6 @@ export default function UserTable() {
           />
         </Dialog>
       )}
-
       <Dialog show={addDialog} setShow={setAddDialog} title="افزودن کارمند">
         <UserForm mode="add" onAdd={addNewUser} />
       </Dialog>
