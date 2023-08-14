@@ -73,7 +73,7 @@ export default function Pagination({
             )}
             {p !== "..." && (
               <PageItem
-                key={p}
+                key={`${i}-${p}`}
                 active={page === p}
                 disabled={false}
                 onClick={() => setPage(p as number)}

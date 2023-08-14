@@ -11,7 +11,7 @@ export default function Dashboard() {
     navigate("/", { replace: true });
   }, [logout, navigate]);
   return (
-    <div className="main-section my-xl">
+    <div className="main-section py-xl">
       <div className="flex justify-end">
         <button
           className="error white--text rounded text-xs py-sm px-md"

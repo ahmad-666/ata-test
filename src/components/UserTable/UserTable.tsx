@@ -6,7 +6,6 @@ import UserDetails from "../UserDetails/UserDetails";
 import Dialog from "../Dialog/Dialog";
 import Snackbar from "../Snackbar/Snackbar";
 import InputField from "../InputField/InputField";
-import Pagination from "../Pagination/Pagination";
 import useForm from "../../hooks/useForm";
 export default function UserTable() {
   const [addDialog, setAddDialog] = useState(false);
@@ -14,6 +13,7 @@ export default function UserTable() {
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [detailsDialog, setDetailsDialog] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
+  const [page, setPage] = useState(1);
   const { values, onSubmit, onChange } = useForm({
     initVals: {
       fname: "",
@@ -37,6 +37,86 @@ export default function UserTable() {
     },
     {
       id: 2,
+      fname: "نام دو",
+      lname: "نام خانوادگی دو",
+      address: "تهران",
+      email: "ab@g.co",
+      mobile: "09158912930",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 3,
+      fname: "نام",
+      lname: "نام",
+      address: "مشهد",
+      email: "a@g.co",
+      mobile: "09158912938",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 4,
+      fname: "نام دو",
+      lname: "نام خانوادگی دو",
+      address: "تهران",
+      email: "ab@g.co",
+      mobile: "09158912930",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 5,
+      fname: "نام",
+      lname: "نام",
+      address: "مشهد",
+      email: "a@g.co",
+      mobile: "09158912938",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 6,
+      fname: "نام دو",
+      lname: "نام خانوادگی دو",
+      address: "تهران",
+      email: "ab@g.co",
+      mobile: "09158912930",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 7,
+      fname: "نام",
+      lname: "نام",
+      address: "مشهد",
+      email: "a@g.co",
+      mobile: "09158912938",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 8,
+      fname: "نام دو",
+      lname: "نام خانوادگی دو",
+      address: "تهران",
+      email: "ab@g.co",
+      mobile: "09158912930",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 9,
+      fname: "نام",
+      lname: "نام",
+      address: "مشهد",
+      email: "a@g.co",
+      mobile: "09158912938",
+      ssn: "0922569746",
+      imgSrc: "/avatar.png",
+    },
+    {
+      id: 10,
       fname: "نام دو",
       lname: "نام خانوادگی دو",
       address: "تهران",
@@ -140,7 +220,7 @@ export default function UserTable() {
     setDeleteDialog(false);
   }, [activeUser]);
   const addNewUser = useCallback((newUser: User) => {
-    setUsers((old) => [...old, newUser]);
+    setUsers((old) => [newUser, ...old]);
     setAddDialog(false);
   }, []);
   const editUser = useCallback((editedUser: User) => {
@@ -166,6 +246,7 @@ export default function UserTable() {
         );
       });
       setFilteredUsers(filteredUsers);
+      setPage(1);
     },
     [onSubmit, users, values]
   );
@@ -239,7 +320,14 @@ export default function UserTable() {
       >
         افزودن کارمند جدید
       </button>
-      <DataTable columns={columns} rows={filteredUsers} className="mt-xl" />
+      <DataTable
+        columns={columns}
+        rows={filteredUsers}
+        className="mt-xl"
+        page={page}
+        setPage={setPage}
+        pageSize={3}
+      />
       {activeUser && (
         <Dialog
           show={detailsDialog}
