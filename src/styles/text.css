@@ -1,17 +1,17 @@
 .text-xs {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .text-sm {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .text-md {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 .text-lg {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .text-xl {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .text-light {
   font-weight: 300;

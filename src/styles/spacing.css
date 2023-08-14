@@ -130,6 +130,10 @@
 .mr-xl {
   margin-right: 1.8rem;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mx-xs {
   margin-left: 0.4rem;
   margin-right: 0.4rem;

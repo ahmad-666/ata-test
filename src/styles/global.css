@@ -3,33 +3,38 @@
 @import "./text.css";
 @import "./radius.css";
 @import "./grid.css";
+@font-face {
+  font-family: iranSans;
+  src: url("./iran-sans.ttf");
+}
 *,
 *::before,
 *::after {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-}
-@font-face {
   font-family: iranSans;
-  src: url("./assets/iran-sans.ttf");
 }
+
 html,
 body {
   height: 100%;
 }
 body {
-  font-family: iranSans;
   font-size: 16px;
   direction: rtl;
 }
-input {
-  font-family: iranSans;
-}
+
 input::placeholder {
   font-size: 1rem;
   color: rgb(150, 150, 150);
 }
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  direction: ltr;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -173,6 +178,10 @@ a {
 }
 .overflow-auto {
   overflow: auto;
+}
+
+.pointer-none {
+  pointer-events: none;
 }
 
 .transition-linear {
