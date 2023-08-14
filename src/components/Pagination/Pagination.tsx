@@ -67,15 +67,10 @@ export default function Pagination({
           {`<<`}
         </PageItem>
         {pages.map((p, i) => (
-          <>
-            {p === "..." && (
-              <PageItem key={`${i}-...`} disabled>
-                ...
-              </PageItem>
-            )}
+          <div key={`${i}-${p}`}>
+            {p === "..." && <PageItem disabled>...</PageItem>}
             {p !== "..." && (
               <PageItem
-                key={`${i}-${p}`}
                 active={page === p}
                 disabled={false}
                 onClick={() => setPage(p as number)}
@@ -83,7 +78,7 @@ export default function Pagination({
                 {p}
               </PageItem>
             )}
-          </>
+          </div>
         ))}
         <PageItem
           disabled={page === totalPages}

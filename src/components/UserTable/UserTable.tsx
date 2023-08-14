@@ -7,6 +7,7 @@ import Dialog from "../Dialog/Dialog";
 import Snackbar from "../Snackbar/Snackbar";
 import InputField from "../InputField/InputField";
 import useForm from "../../hooks/useForm";
+const pageSize = 5;
 export default function UserTable() {
   const [addDialog, setAddDialog] = useState(false);
   const [editDialog, setEditDialog] = useState(false);
@@ -218,7 +219,8 @@ export default function UserTable() {
     setUsers((old) => old.filter((u) => u.id !== activeUser?.id));
     setActiveUser(null);
     setDeleteDialog(false);
-  }, [activeUser]);
+    if (users.length - 1 <= (page - 1) * pageSize) setPage((old) => old - 1);
+  }, [activeUser, page, users.length]);
   const addNewUser = useCallback((newUser: User) => {
     setUsers((old) => [newUser, ...old]);
     setAddDialog(false);
@@ -326,7 +328,7 @@ export default function UserTable() {
         className="mt-xl"
         page={page}
         setPage={setPage}
-        pageSize={5}
+        pageSize={pageSize}
       />
       {activeUser && (
         <Dialog
