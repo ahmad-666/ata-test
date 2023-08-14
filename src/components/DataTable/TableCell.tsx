@@ -14,7 +14,7 @@ export default function TableCell({ column, row }: TableCellProps) {
               label: column.label,
               value: row[column.value],
             },
-            column
+            row
           )}
     </td>
   );

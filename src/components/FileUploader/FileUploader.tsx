@@ -1,39 +1,59 @@
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useCallback } from "react";
 import styles from "./fileUploader.module.css";
 
 type FileUploaderProps = {
-  onChange: React.Dispatch<React.SetStateAction<File | null>>;
+  setValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
   thumbnail: null | string;
+  setThumbnail: React.Dispatch<React.SetStateAction<string>>;
+  error?: null | boolean | string;
+  name: string;
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 export default function FileUploader({
-  onChange,
+  setValue,
   label,
   thumbnail,
+  setThumbnail,
+  error = null,
+  name,
+  onBlur,
 }: FileUploaderProps) {
-  const [thumbnailSrc, setThumbnailSrc] = useState(thumbnail);
   const changeHandler = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
+      setValue(e);
       const file = e.target.files?.[0];
       if (file) {
-        onChange(file);
         const src = URL.createObjectURL(file);
-        setThumbnailSrc(src);
+        setThumbnail(src);
       }
     },
-    [onChange]
+    [setValue, setThumbnail]
+  );
+  const blurHandler = useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      onBlur(e);
+    },
+    [onBlur]
   );
   return (
     <div>
       <div>
-        <label className="primary py-md px-lg rounded inline-block">
+        <label className="primary py-md px-lg rounded inline-block cursor-pointer">
           <p className="white--text text-md">{label}</p>
-          <input type="file" className="hidden" onChange={changeHandler} />
+          <input
+            name={name}
+            type="file"
+            className="hidden"
+            onChange={changeHandler}
+            onBlur={blurHandler}
+          />
         </label>
       </div>
-      {thumbnailSrc && (
+      {error && <p className="text-xs error--text mt-xs">{error}</p>}
+      {thumbnail && (
         <img
-          src={thumbnailSrc}
+          src={thumbnail}
           alt="upload-img"
           className={`mt-md rounded ${styles.thumbnail}`}
         />

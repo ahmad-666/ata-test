@@ -26,7 +26,7 @@ export default function Dialog({
       ></div>
       <div className={`fixed z-3 rounded p-lg white z-3 ${styles.dialog}`}>
         <div className="flex justify-between items-center">
-          <p className="slate-dark--text text-bold text-lg">{title}</p>
+          <p className="slate-dark--text text-bold text-md">{title}</p>
           <button onClick={closeHandler} className="font-xl slate-light1--text">
             X
           </button>

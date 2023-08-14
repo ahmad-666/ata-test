@@ -1,3 +1,8 @@
+export const isRequired = (val: unknown) => {
+  if (!val || (typeof val === "string" && !val?.trim()?.length))
+    return "فیلد اجباری است";
+  return true;
+};
 export const isEmail = (val: string) => {
   const regex = /^\S+@\S+\.\S+$/;
   if (regex.test(val)) return true;
@@ -44,7 +49,7 @@ export const isOnlyNumber = (val: string) => {
 };
 
 export const isOnlyNumberPersian = (val: string) => {
-  const regex = /^[\u0600-\u06FF\s0-9]*$/;
+  const regex = /^[\u0600-\u06FF\s0-9]+$/;
   if (regex.test(val)) return true;
   return "فقط حروف فارسی و عدد وارد کنید";
 };

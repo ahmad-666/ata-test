@@ -7,11 +7,16 @@ import type { Row } from "./TableBody";
 type DataTableProps = {
   columns: Column[];
   rows: Row[];
+  className?: string;
 };
-export default function DataTable({ columns, rows }: DataTableProps) {
+export default function DataTable({
+  columns,
+  rows,
+  className = "",
+}: DataTableProps) {
   return (
-    <div>
-      <table className={`${styles.dataTable}`}>
+    <div className={className}>
+      <table className={`overflow-auto ${styles.dataTable} block`}>
         <TableHeader columns={columns} />
         <TableBody columns={columns} rows={rows} />
       </table>

@@ -4,8 +4,14 @@
 @import "./radius.css";
 @import "./grid.css";
 @font-face {
-  font-family: iranSans;
-  src: url("./iran-sans.ttf");
+  font-family: font;
+  src: url("/iran-sans.ttf");
+  unicode-range: U+0600-06FF;
+}
+@font-face {
+  font-family: font;
+  src: url("/roboto.ttf");
+  unicode-range: U+0020-007F;
 }
 *,
 *::before,
@@ -13,7 +19,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: iranSans;
+  font-family: font;
 }
 
 html,
@@ -31,7 +37,8 @@ input::placeholder {
 }
 input[type="email"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+input[type="tel"] {
   direction: ltr;
 }
 
@@ -56,11 +63,11 @@ a {
 }
 
 .main-section {
-  width: 1100px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .main-section {
     width: 90vw;
   }
@@ -134,6 +141,12 @@ a {
   display: flex;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
 .justify-between {
   justify-content: space-between;
 }
@@ -182,6 +195,10 @@ a {
 
 .pointer-none {
   pointer-events: none;
+}
+
+.input-direction-ltr input {
+  direction: ltr;
 }
 
 .transition-linear {

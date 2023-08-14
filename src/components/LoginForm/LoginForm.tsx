@@ -49,7 +49,7 @@ export default function LoginForm() {
   return (
     <div className={`relative w-full h-screen ${styles.gradient}`}>
       <div className={`white p-lg rounded absolute ${styles.loginForm}`}>
-        <form onSubmit={submitHandler}>
+        <form noValidate onSubmit={submitHandler}>
           <InputField
             label="ایمیل"
             type="email"
