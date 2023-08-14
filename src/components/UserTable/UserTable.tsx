@@ -2,6 +2,7 @@ import DataTable from "../DataTable/DataTable";
 import type { User } from "../../types/user";
 import { useCallback, useMemo, useState } from "react";
 import UserForm from "../UserForm/UserForm";
+import UserDetails from "../UserDetails/UserDetails";
 import Dialog from "../Dialog/Dialog";
 import Snackbar from "../Snackbar/Snackbar";
 import InputField from "../InputField/InputField";
@@ -11,6 +12,7 @@ export default function UserTable() {
   const [addDialog, setAddDialog] = useState(false);
   const [editDialog, setEditDialog] = useState(false);
   const [deleteDialog, setDeleteDialog] = useState(false);
+  const [detailsDialog, setDetailsDialog] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [users, setUsers] = useState<User[]>([
     {
@@ -25,12 +27,12 @@ export default function UserTable() {
     },
     {
       id: 2,
-      fname: "34324",
-      lname: "d434",
-      address: "dsadsa",
-      email: "dsadad",
-      mobile: "e324234",
-      ssn: "4324234",
+      fname: "نام دو",
+      lname: "نام خانوادگی دو",
+      address: "تهران",
+      email: "ab@g.co",
+      mobile: "09158912930",
+      ssn: "0922569746",
       imgSrc: "/avatar.png",
     },
   ]);
@@ -85,7 +87,13 @@ export default function UserTable() {
         render: (data: any, row: any) => {
           return (
             <div className="flex wrap gap-sm">
-              <button className="rounded primary white--text text-xs p-sm">
+              <button
+                className="rounded primary white--text text-xs p-sm"
+                onClick={() => {
+                  setActiveUser(row);
+                  setDetailsDialog(true);
+                }}
+              >
                 مشاهده جزییات
               </button>
               <button
@@ -139,6 +147,25 @@ export default function UserTable() {
         افزودن کارمند جدید
       </button>
       <DataTable columns={columns} rows={users} className="mt-xl" />
+      {activeUser && (
+        <Dialog
+          show={detailsDialog}
+          setShow={setDetailsDialog}
+          title="جزییات کارمند"
+        >
+          <UserDetails
+            id={activeUser.id}
+            fname={activeUser?.fname}
+            lname={activeUser?.lname}
+            imgSrc={activeUser?.imgSrc}
+            ssn={activeUser?.ssn}
+            mobile={activeUser?.mobile}
+            email={activeUser?.email}
+            address={activeUser?.address}
+          />
+        </Dialog>
+      )}
+
       <Dialog show={addDialog} setShow={setAddDialog} title="افزودن کارمند">
         <UserForm mode="add" onAdd={addNewUser} />
       </Dialog>
