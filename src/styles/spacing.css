@@ -115,6 +115,21 @@
 .mt-xl {
   margin-top: 1.8rem;
 }
+.mr-xs {
+  margin-right: 0.4rem;
+}
+.mr-sm {
+  margin-right: 0.6rem;
+}
+.mr-md {
+  margin-right: 0.8rem;
+}
+.mr-lg {
+  margin-right: 1.2rem;
+}
+.mr-xl {
+  margin-right: 1.8rem;
+}
 .mx-xs {
   margin-left: 0.4rem;
   margin-right: 0.4rem;

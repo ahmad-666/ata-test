@@ -7,6 +7,9 @@
 .error {
   background-color: #dc2626;
 }
+.success {
+  background-color: #16a34a;
+}
 .slate-light2 {
   background-color: #e2e8f0;
 }
@@ -36,6 +39,9 @@
 }
 .error--text {
   color: #dc2626;
+}
+.success--text {
+  color: #16a34a;
 }
 .slate-light2--text {
   color: #e2e8f0;
